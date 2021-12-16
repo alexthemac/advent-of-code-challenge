@@ -1,0 +1,1 @@
+Challenge can be found at https://adventofcode.com/
