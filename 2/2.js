@@ -10,7 +10,6 @@ let verticalPosition = 0;
 dataArray.forEach((data) => {
   const movementArray = data.split(" ");
   movementArray[1] = parseInt(movementArray[1]);
-  console.log(movementArray)
   switch (movementArray[0]) {
     case "forward":
       horizontalPosition += movementArray[1];
@@ -30,3 +29,30 @@ dataArray.forEach((data) => {
 console.log("horizontal: ", horizontalPosition, "vertical: ", verticalPosition, "horizontal * vertical: ", horizontalPosition * verticalPosition);
 
 /////=--------------------PART2--------------------=/////
+horizontalPosition = 0;
+verticalPosition = 0;
+let aim = 0;
+
+dataArray.forEach((data) => {
+  const movementArray = data.split(" ");
+  movementArray[1] = parseInt(movementArray[1]);
+  switch (movementArray[0]) {
+    case "forward":
+      horizontalPosition += movementArray[1];
+      verticalPosition = verticalPosition + (aim * movementArray[1]);
+      break;
+    case "backward":
+      horizontalPosition -= movementArray[1];
+      break;
+    case "down":
+      aim += movementArray[1];
+      break;
+    case "up":
+      aim -= movementArray[1];
+      break;
+  };
+  console.log("hori:", horizontalPosition, "vert:", verticalPosition, "aim:", aim)
+
+});
+
+console.log("horizontal: ", horizontalPosition, "vertical: ", verticalPosition, "horizontal * vertical: ", horizontalPosition * verticalPosition);
